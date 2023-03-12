@@ -39,6 +39,7 @@ class Player(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+        self.banana = 0
         self.onGround = False
         self.image.set_colorkey((1, 238, 255))
         self.boltAnimStay = pyganim.PygAnimation(ANIMATION_STAY)

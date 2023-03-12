@@ -1,7 +1,6 @@
-from pygame import sprite
 from pygame.sprite import Sprite
 from pygame.image import load
-# TODO: add an enemy to the platform
+
 
 
 class Enemy(Sprite):
@@ -16,9 +15,13 @@ class Enemy(Sprite):
 
 
 
-    def update(self, platforms):
+    def update(self, monster):
         self.rect.x += self.move_direction
         self.move_counter += 1
-        if abs(self.move_counter) > 50:
-            self.move_direction *= -1
-            self.move_counter *= -1
+        if monster == True:
+            if abs(self.move_counter) > 50:
+                self.move_direction *= -1
+                self.move_counter *= -1
+        else:
+            self.move_direction = 0
+            self.move_counter = 0
